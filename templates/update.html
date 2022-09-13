@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block body %}
+
+<div class="container my-3">
+
+    <form action="{% url 'update' task.id %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-3"> 
+            <input type="text" class="form-control" value="{{task.task}}" name="updatedtask">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    
+</div>
+
+{% endblock body %}
